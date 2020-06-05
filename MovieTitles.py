@@ -19,11 +19,14 @@ ws["D2"] = "Language"
 ws["E2"] = "Location"
 ws["F2"] = "Dates"
 ws["G2"] = "Timings"
+writingCellRow = 3
 
 #Cathay Cineplexes
+#Accessing the webpage
 page = requests.get("http://www.cathaycineplexes.com.sg/movies/")
 soup = BeautifulSoup(page.content, 'html.parser')
-count = 3
+
+
 
 movies = soup.find_all(attrs = {"class":"boxgrid captionfull"})
 for movie in movies:
@@ -52,12 +55,12 @@ for movie in movies:
                 ws["E"+str(count)] = loc
                 ws["F"+str(count)] = datetimesplit.group(1)
                 ws["G"+str(count)] = datetimesplit.group(2)+datetimesplit.group(3)
-                count += 1
+                writingCellRow += 1
 
+#Retrieving date for the excel sheet
 today=datetime.date.today()
-
+#Saving excel sheet, with name that has a date in it
 try:        
     wb.save(str(today)+"CathayMovieTimings.xlsx")
 except:
     print("File is unable to save. Please check if file was left open.")
-
