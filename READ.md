@@ -5,13 +5,13 @@ Email address : tkokhow@gmail.com
 
 <h3>Folder overview structure</h3>
 **ROOT**
-* src
-  * module1.py
-  * module2.py
-* README.md
-* eda.ipynb
-* requirements.txt
-* run.sh
+- src
+  - module1.py
+  - module2.py
+- README.md
+- eda.ipynb
+- requirements.txt
+- run.sh
 
 <h3>How to execute the pipeline and modify any parameters</h3>
 # movie_timings_scrapping
