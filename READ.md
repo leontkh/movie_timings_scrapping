@@ -8,8 +8,10 @@ Email address : tkokhow@gmail.com
 
 - **ROOT**
     - src
-        - module1.py
-        - module2.py
+        - regressor1.py
+        - regressor2.py
+        - classifier1.py
+        - classifier2.py
     - README.md
     - eda.ipynb
     - requirements.txt
