@@ -18,6 +18,14 @@ Email address : tkokhow@gmail.com
 
 <h3>How to execute the pipeline and modify any parameters</h3>
 
+To execute pipeline, use "bash run.sh [model] [path]" 
+Parameters: [model]: {regressor1 or regressor2 or classifer1 or classifer2}
+                    where regressor1 is LinearRegression model (better of the two regressors)
+                    where regressor2 is Lasso model (worse of the two regressors)
+                    where classifer1 is KNeighborsClassfier model (better of the two classifers)
+                    where classifer2 is SVC model (worse of the two classifers) 
+            [path]: path to db that pipeline will be using to predict
+Example: bash run.sh classifer1 data/new_popularity.db
 
 <h3>Logical steps/flow of the pipeline</h3>
 
@@ -93,3 +101,4 @@ On the other hand, the classifers have a much lower RMSE for the test set, showi
 
 <h3>Other considerations for deploying the models developed</h3>
 
+The classifiers and regressors should be fast in doing their prediction. SVC is slow, but it is still the second best classifier out of those that are tried.
